@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-TimelineMaker::Application.config.secret_token = <%= ENV['TIMELINE_MAKER_COOKIE_SECRET_TOKEN']
+TimelineMaker::Application.config.secret_token = ENV['TIMELINE_MAKER_COOKIE_SECRET_TOKEN']
