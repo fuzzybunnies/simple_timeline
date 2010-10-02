@@ -46,7 +46,7 @@ width: 940px;
 }
 
 #wrapper {
-background: #f8f3df url('images/papertop.jpg') repeat-x;
+background: #f8f3df url('../images/papertop.jpg') repeat-x;
 padding: 0 20px;
 -webkit-box-shadow: 3px 3px 7px #777;
 -moz-box-shadow: 3px 3px 7px #777;

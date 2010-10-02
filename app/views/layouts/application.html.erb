@@ -7,8 +7,6 @@
   <meta name="description" content=""/>
   <meta name="keywords" content=" "/>
 
-  <!-- Meta -->
-  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   <meta name="robots" content="noodp"/>
 
   <!-- Microsoft smarties -->
@@ -23,8 +21,8 @@
   <%= csrf_meta_tag %>
 
   <%= stylesheet_link_tag 'reset' %>
+
   <%= stylesheet_link_tag 'style' %>
-  <%= stylesheet_link_tag 'print' %>
   <%= javascript_include_tag :defaults %>
   <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
@@ -35,7 +33,10 @@
 	<header><!-- header -->
 		<h1><a href="#">Mapping History</a></h1>
 		<h2>Your tag line here</h2>
-		<img src="images/extrav1.png" width="280" height="200" alt=""> <img src="images/extrav2.png" width="280" height="200" alt=""> <img src="images/extrav3.png" width="280" height="200" alt=""><!-- header image -->
+      <%= image_tag 'extrav1.png', :height=>200, :width=>280, :alt=>'' %>
+
+      <%= image_tag 'extrav2.png', :height=>200, :width=>280, :alt=>'' %>
+      <%= image_tag 'extrav3.png', :height=>200, :width=>280, :alt=>'' %>
 	</header><!-- end of header -->
 	
 	<nav><!-- top nav -->
@@ -71,7 +72,8 @@
 	<section id="main"><!-- #main content and sidebar area -->
 		<section id="container"><!-- #container -->
 			<section id="content"><!-- #content -->
-                  <%= yield %>
+                  <%= #yield 
+%>
 		
 						
 			</section><!-- end of #content -->
