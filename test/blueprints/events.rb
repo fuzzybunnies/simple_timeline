@@ -1,0 +1,2 @@
+Event.blueprint do
+end
