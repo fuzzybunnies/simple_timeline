@@ -1,20 +1,17 @@
-<h1>Listing timelines</h1>
+<h1>Most recent timelines</h1>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @timelines.each do |timeline| %>
-  <tr>
-    <td><%= link_to 'Show', timeline %></td>
-    <td><%= link_to 'Edit', edit_timeline_path(timeline) %></td>
-    <td><%= link_to 'Destroy', timeline, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <div>
+    <h1><%= link_to timeline.name, timeline %>
+  </div>
+  <div>
+    <p>
+      timeline.description
+    </p>
+    
+  </div>
 <% end %>
-</table>
 
 <br />
 
