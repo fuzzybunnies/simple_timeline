@@ -1,6 +1,6 @@
 TimelineMaker::Application.routes.draw do
   resources :timelines
 
- # root :to => "welcome#index"
+  root :to => "timelines#index"
 
 end
