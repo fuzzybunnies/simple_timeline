@@ -69,15 +69,4 @@ class TimelinesController < ApplicationController
     end
   end
 
-  # DELETE /timelines/1
-  # DELETE /timelines/1.xml
-  def destroy
-    @timeline = Timeline.find(params[:id])
-    @timeline.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(timelines_url) }
-      format.xml  { head :ok }
-    end
-  end
 end
