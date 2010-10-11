@@ -19,8 +19,10 @@ module TimelineMaker
       generator.orm :mongoid
     end
 
-   config.encoding = "utf-8"
+    config.encoding = "utf-8"
 
     config.filter_parameters += [:password]
+
+    config.autoload_paths += %W(#{Rails.root}/lib)
   end
 end
