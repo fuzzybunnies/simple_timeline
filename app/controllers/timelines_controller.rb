@@ -14,7 +14,7 @@ class TimelinesController < ApplicationController
   # GET /timelines/1.xml
   def show
     @timeline = Timeline.find(params[:id])
-
+    self.current_timeline = @timeline
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @timeline }
@@ -37,6 +37,7 @@ class TimelinesController < ApplicationController
     @timeline = Timeline.find(params[:id])
   end
 
+
   # POST /timelines
   # POST /timelines.xml
   def create
@@ -48,22 +49,6 @@ class TimelinesController < ApplicationController
         format.xml  { render :xml => @timeline, :status => :created, :location => @timeline }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @timeline.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /timelines/1
-  # PUT /timelines/1.xml
-  def update
-    @timeline = Timeline.find(params[:id])
-
-    respond_to do |format|
-      if @timeline.update_attributes(params[:timeline])
-        format.html { redirect_to(@timeline, :notice => 'Timeline was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
         format.xml  { render :xml => @timeline.errors, :status => :unprocessable_entity }
       end
     end
