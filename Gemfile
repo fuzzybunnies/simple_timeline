@@ -10,3 +10,4 @@ gem "autotest"
 gem "machinist", :git => "http://github.com/notahat/machinist.git", :branch => "master", :group => :test
 gem "machinist_mongo", :git => "http://github.com/nmerouze/machinist_mongo.git", :group => :test, :branch => "machinist2", :require => "machinist/mongoid"
 gem "faker"
+gem "ruby-debug19"
