@@ -23,20 +23,14 @@ line-height: 18px;
 
 #container {
 float: left;
-margin: 0 -240px 0 0;
-width: 650px;
+margin: 0 0 0 0;
+width: 940px;
 }
 
 #content {
-margin: 0 280px 0 20px;
+margin: 0 20px 0 20px;
 }
 
-#sidebar {
-float: right;
-overflow: hidden;
-width: 280px;
-margin-top: 20px;
-}
 
 .menu,
 #main,
@@ -215,13 +209,13 @@ padding: 15px 0 0 0;
 }
 
 #content {
-width: 600px;
+width: 885px;
 margin-bottom: 36px;
 color: #444;
 font-size: 16px;
 line-height: 24px;
-border-right: 1px #ddd solid;
 padding-right: 10px;
+min-height: 450px;
 }
 
 article {
