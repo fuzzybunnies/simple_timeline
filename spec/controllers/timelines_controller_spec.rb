@@ -70,56 +70,5 @@ describe TimelinesController do
 
   end
 
-  describe "PUT update" do
-
-    describe "with valid params" do
-      it "updates the requested timeline" do
-        Timeline.should_receive(:find).with("37") { mock_timeline }
-        mock_timeline.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, :id => "37", :timeline => {'these' => 'params'}
-      end
-
-      it "assigns the requested timeline as @timeline" do
-        Timeline.stub(:find) { mock_timeline(:update_attributes => true) }
-        put :update, :id => "1"
-        assigns(:timeline).should be(mock_timeline)
-      end
-
-      it "redirects to the timeline" do
-        Timeline.stub(:find) { mock_timeline(:update_attributes => true) }
-        put :update, :id => "1"
-        response.should redirect_to(timeline_url(mock_timeline))
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the timeline as @timeline" do
-        Timeline.stub(:find) { mock_timeline(:update_attributes => false) }
-        put :update, :id => "1"
-        assigns(:timeline).should be(mock_timeline)
-      end
-
-      it "re-renders the 'edit' template" do
-        Timeline.stub(:find) { mock_timeline(:update_attributes => false) }
-        put :update, :id => "1"
-        response.should render_template("edit")
-      end
-    end
-
-  end
-
-  describe "DELETE destroy" do
-    it "destroys the requested timeline" do
-      Timeline.should_receive(:find).with("37") { mock_timeline }
-      mock_timeline.should_receive(:destroy)
-      delete :destroy, :id => "37"
-    end
-
-    it "redirects to the timelines list" do
-      Timeline.stub(:find) { mock_timeline }
-      delete :destroy, :id => "1"
-      response.should redirect_to(timelines_url)
-    end
-  end
 
 end
