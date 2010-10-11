@@ -9,13 +9,16 @@ class EventsController < ApplicationController
   end
 
   def create
-    event = Event.new(params)
+    @timeline = current_timeline
+    e = Event.new(params[:event])
+    @timeline.events << e
+debugger
 
-    if(event.save)
-      redirect_to timeline_path(current_timeline)
+    if(e.save)
+      redirect_to timeline_path(@timeline)
     else
-      @event = event
-      render :template => :new
+      @event = e
+      render :template => "events/new"
     end
   end
 end
