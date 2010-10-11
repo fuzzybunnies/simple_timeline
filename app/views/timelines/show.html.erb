@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-
-<%= link_to 'Edit', edit_timeline_path(@timeline) %> |
-<%= link_to 'Back', timelines_path %>
+<h1><%= @timeline.name %></h1>
+<div class="timeline-description">
+  <p>
+    <%= @timeline.description %>
+  </p>
+</div>
