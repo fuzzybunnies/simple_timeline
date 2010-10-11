@@ -1,3 +1,5 @@
+require 'chronic'
+
 class Event
   include Mongoid::Document
 
@@ -10,5 +12,15 @@ class Event
 
   attr_accessible :event_date, :title, :short_description, :detail_description
 
-  validates_presence_of :event_date, :title, :short_description
+  validates :event_date, :presence => { :message => "doesn't appear to be formatted properly" }
+  validates :title, :presence => true
+  validates :short_description, :presence => true
+
+  def event_date=(value)
+    processed = Chronic::parse(value)
+    unless processed.nil?
+      write_attribute("event_date", processed)
+    end
+  end      
+
 end
