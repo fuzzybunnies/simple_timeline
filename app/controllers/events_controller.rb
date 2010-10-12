@@ -12,7 +12,6 @@ class EventsController < ApplicationController
     @timeline = current_timeline
     e = Event.new(params[:event])
     @timeline.events << e
-debugger
 
     if(e.save)
       redirect_to timeline_path(@timeline)
