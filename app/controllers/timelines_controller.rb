@@ -15,12 +15,16 @@ class TimelinesController < ApplicationController
   def show
     @timeline = Timeline.find(params[:id])
     self.current_timeline = @timeline
+    sort_timeline_events
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @timeline }
     end
   end
 
+  def sort_timeline_events
+    @timeline.events.sort!{ |a, b| (a.event_date.nil? ? Date.new(1,1,1) : a.event_date) <=> (b.event_date.nil? ? Date.new(1,1,1) : b.event_date) }
+  end
   # GET /timelines/new
   # GET /timelines/new.xml
   def new
