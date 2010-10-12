@@ -7,10 +7,11 @@ class Event
   field :title
   field :short_description
   field :detailed_description
+  index [[:event_date, Mongo::ASCENDING]]
 
   embedded_in :timeline, :inverse_of => :events
 
-  attr_accessible :event_date, :title, :short_description, :detail_description
+  attr_accessible :event_date, :title, :short_description, :detailed_description
 
   validates :event_date, :presence => { :message => "doesn't appear to be formatted properly" }
   validates :title, :presence => true
