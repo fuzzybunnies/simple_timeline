@@ -6,3 +6,21 @@
     <%= @timeline.description %>
   </p>
 </div>
+<% @timeline.events.each do | event | %>
+<div class="event-container">
+  <p class="event-info">
+    <%= event.title %> occurred on <%= format_event_date(event.event_date) %>
+  </p>
+  <div class="event-descriptions">
+    <p>
+      <%= event.short_description %>
+    </p>
+    <p>
+      <%= event.detailed_description %>
+    </p>
+  </div>
+  <div class="image-container">
+    
+  </div>
+</div>
+<% end %>
