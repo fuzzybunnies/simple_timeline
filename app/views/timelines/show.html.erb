@@ -20,7 +20,11 @@
     </p>
   </div>
   <div class="image-container">
-    
+    <% event.images.each do |event_image| %>
+      <% if event_image.image.url %>
+      <%= image_tag event_image.image.url(:medium) %>
+      <% end %>
+    <% end %>    
   </div>
 </div>
 <% end %>
