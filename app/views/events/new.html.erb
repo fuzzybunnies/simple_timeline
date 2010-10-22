@@ -14,8 +14,30 @@ Add an event to the <b><%= @timeline.name %></b> timeline. (<%= link_to "Choose 
   <% end %>
 
 
-<%= form_for @event, :url => timeline_events_path do |f| %>
-  <%= render :partial => "event_form_fields", :locals => { :f => f } %>
+<%= form_for @event, :url => timeline_events_path, :html => { :multipart => true } do |f| %>
+  <p>
+    <%= f.label :event_date %><br />
+    <%= f.text_field :event_date %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :short_description %><br />
+    <%= f.text_field :short_description, :size => 65 %>
+  </p>
+  <p>
+    <%= f.label :detailed_description %><br />
+    <%= f.text_area :detailed_description, :cols =>75, :rows => 4 %>
+  </p>
+
+  <%= f.fields_for :image do |i| %>
+  <p>
+    <%= i.label :image %><br />
+    <%= i.file_field :image %>
+  </p>
+  <% end %>
   <p>
     <%= f.submit "Add Event to the #{ @timeline.name } timeline" %>
   </p>
