@@ -10,6 +10,7 @@ class Event
   index [[:event_date, Mongo::ASCENDING]]
 
   embedded_in :timeline, :inverse_of => :events
+  embeds_many :images, :default => []
 
   attr_accessible :event_date, :title, :short_description, :detailed_description
 
