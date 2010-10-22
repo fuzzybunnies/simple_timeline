@@ -12,3 +12,6 @@ gem "machinist_mongo", :git => "http://github.com/nmerouze/machinist_mongo.git",
 gem "faker"
 gem "ruby-debug19"
 gem "hank-chronic"
+gem 'carrierwave', :git => 'git://github.com/jnicklas/carrierwave.git', :branch => 'master' 
+gem 'mini_magick'
+
