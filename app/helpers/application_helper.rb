@@ -8,4 +8,20 @@ module ApplicationHelper
       return link_to 'Add Event', new_timeline_event_path(controller.current_timeline)
     end
   end
+
+  def format_event_date_info(event)
+    if event.is_year_only
+      return raw("occurred in #{event.event_date.strftime('%Y')}")
+    else
+      return raw("occurred on #{format_event_date(event.event_date)}")
+    end
+  end
+  def format_event_date(value)
+    if value.nil?
+      return "?"
+    end
+
+    return value.strftime('%B %d, %Y')
+  end
+
 end

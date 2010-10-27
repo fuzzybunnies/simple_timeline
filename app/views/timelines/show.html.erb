@@ -9,7 +9,7 @@
 <% @timeline.events.each do | event | %>
 <div class="event-container">
   <p class="event-info">
-    <%= event.title %> occurred on <%= format_event_date(event.event_date) %>
+    <%= event.title %> <%= format_event_date_info(event) %> (<%= link_to "edit", edit_timeline_event_path(@timeline, event) %>)
   </p>
   <div class="event-descriptions">
     <p>

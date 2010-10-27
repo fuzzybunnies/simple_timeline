@@ -1,0 +1,46 @@
+<p>
+Edit event on the <b><%= @timeline.name %></b> timeline. (<%= link_to "Choose other timeline", root_path %>)
+</p>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<%= form_for @event, :url => timeline_event_path(@timeline, @event), :html => { :multipart => true } do |f| %>
+  <p>
+    <%= f.label :event_date %><br />
+    <%= f.text_field :event_date, :value => format_event_date(@event.event_date) %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :short_description %><br />
+    <%= f.text_field :short_description, :size => 65 %>
+  </p>
+  <p>
+    <%= f.label :detailed_description %><br />
+    <%= f.text_area :detailed_description, :cols =>75, :rows => 4 %>
+  </p>
+
+  <%= f.fields_for :image do |i| %>
+  <p>
+    <%= i.label "Add an image" %><br />
+    <%= i.file_field :image %>
+  </p>
+  <% end %>
+  <p>
+    <%= f.submit "Edit this event on the #{ @timeline.name } timeline" %>
+  </p>
+
+<% end %>
+

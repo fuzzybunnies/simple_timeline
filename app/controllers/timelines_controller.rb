@@ -23,7 +23,15 @@ class TimelinesController < ApplicationController
   end
 
   def sort_timeline_events
-    @timeline.events.sort!{ |a, b| (a.event_date.nil? ? Date.new(1,1,1) : a.event_date) <=> (b.event_date.nil? ? Date.new(1,1,1) : b.event_date) }
+    @timeline.events.sort! do |a, b| 
+      date1 = a.event_date.nil? ? Date.new(1,1,1) : a.event_date
+      date2 = b.event_date.nil? ? Date.new(1,1,1) : b.event_date
+      comp = date1 <=> date2
+      unless comp != 0
+        comp = a.id.to_s <=> b.id.to_s
+      end
+      comp
+    end
   end
   # GET /timelines/new
   # GET /timelines/new.xml
