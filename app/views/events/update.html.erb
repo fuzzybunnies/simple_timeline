@@ -17,7 +17,7 @@ The event was updated successfully! Amazing! Go to <%= link_to "timeline", timel
   <div class="image-container">
     <% @event.images.each do |event_image| %>
       <% if event_image.image.url %>
-      <%= image_tag event_image.image.url(:medium) %>
+      <%= image_tag event_image.image.url(:thumb) %>
       <% end %>
     <% end %>    
   </div>

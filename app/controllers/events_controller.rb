@@ -34,11 +34,17 @@ class EventsController < ApplicationController
   end
 
   def update
-    debugger
 
     if timeline_and_event_are_valid?
 
-      unless @event.update_attributes(params[:event])
+      @event.write_attributes(params[:event])
+
+      unless params[:event][:image].blank?
+        @event.images << Image.new(params[:event][:image])
+        @event.images.last.save
+      end
+
+      unless @event.save!
         render :template => "events/edit" and return
       end
 

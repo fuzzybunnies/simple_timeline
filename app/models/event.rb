@@ -26,9 +26,7 @@ debugger
       self.is_year_only = true
     end
     processed = Chronic::parse(value)
-#    unless processed.nil?
-      write_attribute("event_date", processed)
-#    end
+    write_attribute("event_date", processed)
   end      
 
 end
