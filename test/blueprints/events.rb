@@ -1,2 +1,0 @@
-Event.blueprint do
-end
