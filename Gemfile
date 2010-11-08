@@ -1,9 +1,10 @@
 source 'http://rubygems.org'
-gem "rails", "3.0.0"
+gem "rails", ">= 3.0.0"
 gem "rails3-generators"
-gem "mongoid", ">=2.0.0.beta.19"
-gem "bson_ext", "1.0.9"
-gem "mongo", "1.0.9"
+gem "mongoid", ">= 2.0.0.beta.19"
+gem "bson", ">= 1.0.9"
+gem "bson_ext", ">= 1.0.9"
+gem "mongo", ">= 1.0.9"
 gem "rspec", ">= 2.0.0.beta.22", :group => :test
 gem "rspec-rails", ">= 2.0.0.beta.22", :group => :test
 gem "autotest"
@@ -14,4 +15,5 @@ gem "ruby-debug19"
 gem "hank-chronic"
 gem 'carrierwave', :git => 'git://github.com/jnicklas/carrierwave.git', :branch => 'master' 
 gem 'mini_magick'
-
+gem 'devise'
+gem 'mongoid_rails_migrations', :git => 'git://github.com/adacosta/mongoid_rails_migrations.git', :branch => 'master'
