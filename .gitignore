@@ -5,4 +5,4 @@ public/uploads/*
 .bundle/*
 Capfile
 config/deploy.rb
-
+test/*
