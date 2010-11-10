@@ -28,73 +28,32 @@
 
 </head>
 <body>
-  <div id="wrapper"><!-- #wrapper -->
-    <header><!-- header -->
-      <h1><a href="#">Timeline Maker</a></h1>
-    </header><!-- end of header -->
+  <div id="wrapper">
+    <header>
+    </header>
     
-    <nav><!-- top nav -->
+    <nav>
       <div class="menu">
         <ul>
           <li><%= link_to 'Home', root_path %>
           <li><%= link_to 'Add Timeline', new_timeline_path %>
           <li><%= add_event_link %></li>
-<!--
-          link to add event to currently selected timeline
--->
-<!--
-          <li><a href="#">Services</a>
-            <ul>
-              <li><a href="#">Travel Planning</a></li>
-              <li><a href="#">Reservations</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Support</a></li>
-          <li><a href="#">Contact Us</a></li>
--->
         </ul>
       </div>
-      </nav><!-- end of top nav -->
-      <section id="main"><!-- #main content and sidebar area -->
-        <section id="container"><!-- #container -->
-          <section id="content"><!-- #content -->
+      </nav>
+      <section id="main">
+        <section id="container">
+          <section id="content">
 
-            <p class="notice"><%= notice %></p>
-            <p class="alert"><%= alert %></p>
             <%= yield %>
-          </section><!-- end of #content -->
-        </section><!-- end of #container -->
-<!--
-        <aside id="sidebar">
-          <h3>Things To Do</h3>
-          <ul>
-            <li><a href="#">Chat With Friends</a></li>
-            <li><a href="#">Swap Stories</a></li>
-            <li><a href="#">Sell Stuff</a></li>
-            <li><a href="#">Buy Stuff</a></li>
-            <li><a href="#">Trade Stuff</a></li>
-          </ul>
-        </aside>
--->
 
+          </section>
+        </section>
       </section>
       <footer>
         <section id="footer-area">
-
           <section id="footer-outer-block">
             &copy; Copyright 2010 by your mom. She said, "All rights reserved, punk."
-<!--
-            <aside id="first" class="footer-segment">
-              <h3>Explore More</h3>
-              <ul>
-                <li><a href="#">one linkylink</a></li>
-                <li><a href="#">two linkylinks</a></li>
-                <li><a href="#">three linkylinks</a></li>
-                <li><a href="#">four linkylinks</a></li>
-                <li><a href="#">five linkylinks</a></li>
-              </ul>
-            </aside>
--->
           </section>
         </section>
       </footer>
