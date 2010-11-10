@@ -1,5 +1,7 @@
 TimelineMaker::Application.routes.draw do
 
+  devise_for :users
+
   match "/images/uploads/*path" => "gridfs#serve"
 
   resources :timelines do
