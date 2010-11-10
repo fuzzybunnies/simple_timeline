@@ -12,3 +12,13 @@
 .event-descriptions {
   padding-left: 10px;
 }
+
+.event-container .image-container {
+  margin-left: 10px;
+}
+
+.event-container .event-action-container {
+  text-align: right;
+  margin-right: 20px;
+  height: 2em;
+}
