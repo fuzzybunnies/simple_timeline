@@ -1,18 +1,18 @@
 class EventsController < ApplicationController
 
+  before_filter :authenticate_user!
+
   def new
     @event = Event.new
     @timeline = Timeline.find(params[:timeline_id])
     rescue
       redirect_to timelines_path
-
   end
 
   def create
     @timeline = current_timeline
     e = Event.new(params[:event])
     @timeline.events << e
-
 
     if e.valid? && @timeline.save
     
