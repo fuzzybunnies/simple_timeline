@@ -9,7 +9,7 @@
 <% @timeline.events.each do | event | %>
 <div class="event-container">
   <p class="event-info">
-    <%= event.title %> <%= format_event_date_info(event) %> (<%= link_to "edit", edit_timeline_event_path(@timeline, event) %>)
+    <%= event.title %> <%= format_event_date_info(event) %>
   </p>
   <div class="event-descriptions">
     <p>
@@ -18,13 +18,23 @@
     <p>
       <%= event.detailed_description %>
     </p>
+
   </div>
   <div class="image-container">
     <% event.images.each do |event_image| %>
       <% if event_image.image.url %>
-      <%= image_tag event_image.image.url(:medium) %>
+      <%= link_to image_tag(event_image.image.url(:thumb)), event_image.image.url() %>
       <% end %>
     <% end %>    
   </div>
+  <div class="clear"></div>
+  <div class="event-action-container">
+    <% if user_signed_in? %>
+    <p>
+      <%= link_to "edit", edit_timeline_event_path(@timeline, event) %>
+    </p>
+    <% end %>
+  </div>
+  <div class="clear"></div>
 </div>
 <% end %>
