@@ -45,8 +45,6 @@ Devise.setup do |config|
   # (then you should set stretches to 10, and copy REST_AUTH_SITE_KEY to pepper)
   config.encryptor = :bcrypt
 
-  # Setup a pepper to generate the encrypted password.
-  config.pepper = ""
 
   # ==> Configuration for :confirmable
   # The time you want to give your user to confirm his account. During this time
