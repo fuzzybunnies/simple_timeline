@@ -32,4 +32,6 @@ TimelineMaker::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  config.action_dispatch.best_standards_support = :builtin
 end

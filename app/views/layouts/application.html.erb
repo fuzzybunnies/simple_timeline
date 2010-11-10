@@ -58,7 +58,10 @@
       <section id="main"><!-- #main content and sidebar area -->
         <section id="container"><!-- #container -->
           <section id="content"><!-- #content -->
-          <%= yield %>
+
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+            <%= yield %>
           </section><!-- end of #content -->
         </section><!-- end of #container -->
 <!--
