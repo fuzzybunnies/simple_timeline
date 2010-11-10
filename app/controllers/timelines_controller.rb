@@ -1,6 +1,6 @@
 class TimelinesController < ApplicationController
 
-  before_filter :authenticate_user!#, :only => [:new, :edit, :create]
+  before_filter :authenticate_user!, :only => [:new, :edit, :create]
 
   # GET /timelines
   # GET /timelines.xml
