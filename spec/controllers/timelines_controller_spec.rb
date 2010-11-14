@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe TimelinesController do
+include Devise::TestHelpers
+
+  before (:each) do
+    @user = User.make!
+    sign_in @user
+  end
 
   def mock_timeline(stubs={})
     @mock_timeline ||= mock_model(Timeline, stubs).as_null_object

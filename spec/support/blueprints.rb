@@ -8,6 +8,10 @@ require 'machinist/mongoid'
 #     body  { "Lorem ipsum..." }
 #   end
 
+User.blueprint do
+  email { Faker::Internet.email }
+  password { 'password' }
+end
 Timeline.blueprint do
   name { }
   events {[]}
