@@ -29,7 +29,7 @@
   </div>
   <div class="clear"></div>
   <div class="event-action-container">
-    <% if user_signed_in? %>
+    <% if user_signed_in? && @timeline.user == current_user %>
     <p>
       <%= link_to "edit", edit_timeline_event_path(@timeline, event) %>
     </p>

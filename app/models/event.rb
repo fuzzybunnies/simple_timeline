@@ -20,7 +20,6 @@ class Event
   validates :short_description, :presence => true
 
   def event_date=(value)
-debugger
     if Regexp.new(/^\d{4}$/).match(value)
       value = "1/1/#{value}"
       self.is_year_only = true

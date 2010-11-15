@@ -50,6 +50,10 @@ class TimelinesController < ApplicationController
   # GET /timelines/1/edit
   def edit
     @timeline = Timeline.find(params[:id])
+    unless @timeline.user == current_user
+      @action = 'edit this timeline.'
+      render :template => 'shared/not_authorized' and return
+    end
   end
 
 
@@ -57,6 +61,7 @@ class TimelinesController < ApplicationController
   # POST /timelines.xml
   def create
     @timeline = Timeline.new(params[:timeline])
+    @timeline.user = current_user
 
     respond_to do |format|
       if @timeline.save

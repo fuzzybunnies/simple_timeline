@@ -22,3 +22,8 @@
   margin-right: 20px;
   height: 2em;
 }
+
+#not_authorized {
+  margin: 30px;
+  width: 400px;
+}

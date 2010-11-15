@@ -7,4 +7,6 @@ class User
   devise :database_authenticatable, 
          :recoverable, :rememberable, :trackable, :validatable
 
+  references_many :timelines
+
 end

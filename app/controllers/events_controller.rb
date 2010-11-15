@@ -3,14 +3,25 @@ class EventsController < ApplicationController
   before_filter :authenticate_user!
 
   def new
+debugger
     @event = Event.new
     @timeline = Timeline.find(params[:timeline_id])
-    rescue
-      redirect_to timelines_path
+
+    unless @timeline.user == current_user
+      @action = "to create a new event on this timeline because you're not the owner"
+      render :template => 'shared/not_authorized' and return
+    end
+
   end
 
   def create
     @timeline = current_timeline
+
+    unless @timeline.user == current_user
+      @action = "to add a new event to this timeline because you're not the owner"
+      render :template => 'shared/not_authorized' and return
+    end
+
     e = Event.new(params[:event])
     @timeline.events << e
 
@@ -31,11 +42,21 @@ class EventsController < ApplicationController
 
   def edit
     timeline_and_event_are_valid?
+    unless @timeline.user == current_user
+      @action = 'edit this event because you are not the owner'
+      render :template => 'shared/not_authorized' and return
+    end
   end
 
   def update
 
     if timeline_and_event_are_valid?
+
+      unless @timeline.user == current_user
+        @action = "to update this event because you're not the owner"
+        render :template => 'shared/not_authorized' and return
+      end
+
 
       @event.write_attributes(params[:event])
 
