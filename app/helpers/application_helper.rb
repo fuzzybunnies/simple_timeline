@@ -11,7 +11,7 @@ module ApplicationHelper
 
   def format_event_date_info(event)
     if event.is_year_only
-      return raw(" in #{event.event_date.strftime('%Y')}")
+      return raw(" in #{event.event_date.strftime('%Y').sub(/^0+/, '')}")
     else
       return raw(" on #{format_event_date(event.event_date)}")
     end
