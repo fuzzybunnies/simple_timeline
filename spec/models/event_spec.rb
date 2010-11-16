@@ -7,8 +7,13 @@ describe Event do
     @e = Event.make
   end
 
-  it 'should set the is_year_only field to true if a year is input as the event_date' do
+  it 'should set the is_year_only field to true if a 4 digit year is input as the event_date' do
     @e.event_date = '1492'
+    @e.is_year_only.should be_true
+  end
+
+  it 'should set the is_year_only field to true if a 3 digit year is input as the event_date' do
+    @e.event_date = '149'
     @e.is_year_only.should be_true
   end
 
