@@ -13,4 +13,14 @@ describe User do
     u.respond_to?(:updated_at).should be_true
   end
 
+  it 'should reference timelines' do
+    u = User.make!
+    u.timelines << Timeline.make!(:valid)
+
+    u.timelines.length.should eql(1)
+
+    u.timelines.each { |t| t.destroy }
+    u.destroy
+  end
+
 end

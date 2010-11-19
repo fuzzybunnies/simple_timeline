@@ -29,9 +29,9 @@ describe Timeline do
   end
 
   it "should embed events" do
-    t = Timeline.make
-    t.name = Faker::Lorem.words(3)
-    t.events = Event.make(3)
-    t.events.length.should eql(3)
+    t = Timeline.make(:valid)
+    t.events << Event.make(:valid)
+    t.save
+    t.events.first.should_not be_nil
   end
 end
